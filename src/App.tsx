@@ -7,6 +7,7 @@ import { myContext } from './Context'
 import "bootstrap/dist/css/bootstrap.min.css";
 import UpdateUser from './Components/UpdateUser/UpdateUser';
 import AddUser from './Components/AddUser/AddUser';
+import PrivacyPage from './Components/PrivacyPage/PrivacyPage';
 
 function App() {
   const userObject = useContext(myContext);
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Route path="/edit/:id" exact component={UpdateUser} />
       <Route path="/add/:number" exact component={AddUser} />
+      <Route path="/privacy" exact component={PrivacyPage} />
       <div className={styles.bodyDiv}></div>
       <Switch>
         {

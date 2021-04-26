@@ -1,0 +1,10 @@
+.bigText {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.detailText {
+  font-size: 1vw;
+  text-align: center;
+  color: gray;
+}
