@@ -109,7 +109,7 @@ export default function UpdateUser(props: any) {
             </div>
             <div className="form-group">
               <input type="submit" value="Update" className="btn btn-primary"/>
-              <input value="button" className="btn btn-danger" onClick={deleteUser}/>
+              <input type="button" value="Delete" className="btn btn-danger ml-2" onClick={deleteUser}/>
             </div>
           </form>
         </div>
