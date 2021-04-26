@@ -8,25 +8,6 @@ import { IUser } from '../../types/maintypes';
 import { useInput } from '../../hooks/useInput';
 import Restricted from '../Restricted/Restricted';
 
-function deleteUser(id: any) {
-  axios.delete('https://num-reg.herokuapp.com/api/users/' + id)
-    .then(response => {
-      axios.get('https://num-reg.herokuapp.com/auth/logout', {
-        withCredentials: true
-      }).then((res: AxiosResponse) => {
-          if (res.data === 'success') {
-            window.location.href = "/";
-          }
-        })
-        .catch(logoutErr => {
-          console.log(logoutErr);
-        });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-}
-
 export default function UpdateUser(props: any) {
   const context = useContext(myContext) as IUser;
   const {value:username, setValue:setUsername, bind:bindUsername} = useInput('');
