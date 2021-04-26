@@ -1,0 +1,10 @@
+.restrictedBigText {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.restrictedDetail {
+  font-size: 1vw;
+  text-align: center;
+  color: gray;
+}

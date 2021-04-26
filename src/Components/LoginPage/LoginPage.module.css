@@ -1,0 +1,47 @@
+.facebookContainer img {
+    width: 25%;
+    height: 100%;
+    object-fit: contain;
+    left: -0.5vw;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.facebookContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 3.5vw;
+    position: relative;
+    font-size: 1vw;
+    cursor: pointer;
+    margin: 10px;
+    background: rgb(241, 241, 241);
+    color:rgb(56, 56, 56);
+    border-radius: 10px;
+    transition: transform 0.25s;
+    box-shadow: -.3vw .3vw rgb(44, 44, 44);
+}
+
+.facebookContainer:hover {
+    transform: translate(.3vw, -.2vw);
+  }
+
+.loginPage {
+    margin-top: 20vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    flex-direction: column;
+    min-width: 40vw;
+}

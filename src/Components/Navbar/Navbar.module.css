@@ -1,0 +1,36 @@
+.navBarWrapper {
+  width: 100vw;
+  height: 4vw;
+  padding-top: 1vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navBar li {
+  color: rgb(0, 0, 0);
+  list-style: none;
+  cursor: pointer;
+}
+
+.navBar li:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
+.navBar a {
+  color: rgb(0, 0, 0);
+}
+
+.navBar a:hover {
+  color: rgb(0, 0, 0);
+}
