@@ -22,6 +22,7 @@ export default function Navbar() {
   return (
     <div className={styles.navBarWrapper}>
       <ul className={styles.navBar}>
+        <li><Link to="/privacy" className="mr-5">privacy</Link></li>
         {
           userObject ? 
             (<li onClick={logout} className="mr-5">log out</li>) : 

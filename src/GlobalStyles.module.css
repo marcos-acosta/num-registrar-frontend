@@ -25,3 +25,11 @@ body {
 .bodyDiv {
     padding-top: 1vw;
 }
+
+.blackLink {
+  color: rgb(0, 0, 0);
+}
+
+.blackLink:hover {
+  color: rgb(0, 0, 0);
+}

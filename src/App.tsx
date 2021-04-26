@@ -12,18 +12,20 @@ import PrivacyPage from './Components/PrivacyPage/PrivacyPage';
 function App() {
   const userObject = useContext(myContext);
   return (
-    <BrowserRouter>
-      <Route path="/edit/:id" exact component={UpdateUser} />
-      <Route path="/add/:number" exact component={AddUser} />
-      <Route path="/privacy" exact component={PrivacyPage} />
-      <div className={styles.bodyDiv}></div>
-      <Switch>
-        {
-          userObject ? null : <Route path="/login" component={LoginPage} />
-        }
-        <Route path="/" exact component={Homepage} /> 
-      </Switch>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/edit/:id" exact component={UpdateUser} />
+        <Route path="/add/:number" exact component={AddUser} />
+        <div className={styles.bodyDiv}></div>
+        <Switch>
+          {
+            userObject ? null : <Route path="/login" component={LoginPage} />
+          }
+          <Route path="/" exact component={Homepage} /> 
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

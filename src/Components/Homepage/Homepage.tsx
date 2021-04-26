@@ -95,7 +95,6 @@ export default class UserList extends Component<{}, {users: any}> {
     return (
       <div>
         <Navbar />
-        <Link to="/privacy">Privacy</Link>
         <div className={styles.centerText}>
           <h1> <b>Natural Number Registrar</b> </h1>
         </div>
