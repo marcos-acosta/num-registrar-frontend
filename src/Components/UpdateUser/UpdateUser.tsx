@@ -1,12 +1,31 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import colors from '../../constants/colors';
 import styles from './UpdateUser.module.css'
 import { myContext } from '../../Context';
 import { IUser } from '../../types/maintypes';
 import { useInput } from '../../hooks/useInput';
 import Restricted from '../Restricted/Restricted';
+
+function deleteUser(id: any) {
+  axios.delete('https://num-reg.herokuapp.com/api/users/' + id)
+    .then(response => {
+      axios.get('https://num-reg.herokuapp.com/auth/logout', {
+        withCredentials: true
+      }).then((res: AxiosResponse) => {
+          if (res.data === 'success') {
+            window.location.href = "/";
+          }
+        })
+        .catch(logoutErr => {
+          console.log(logoutErr);
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
 
 export default function UpdateUser(props: any) {
   const context = useContext(myContext) as IUser;
@@ -92,6 +111,7 @@ export default function UpdateUser(props: any) {
             </div>
             <div className="form-group">
               <input type="submit" value="Update" className="btn btn-primary"/>
+              <input value="Delete" className="btn btn-danger"/>
             </div>
           </form>
         </div>
