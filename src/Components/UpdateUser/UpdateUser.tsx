@@ -61,7 +61,25 @@ export default function UpdateUser(props: any) {
         console.log(res.data);
         window.location.href = '/';
       })
+  }
 
+  const deleteUser = () => {
+    axios.delete('https://num-reg.herokuapp.com/api/users/' + props.match.params.id)
+      .then(response => {
+        axios.get('https://num-reg.herokuapp.com/auth/logout', {
+          withCredentials: true
+        }).then((res: AxiosResponse) => {
+            if (res.data === 'success') {
+              window.location.href = "/";
+            }
+          })
+          .catch(logoutErr => {
+            console.log(logoutErr);
+          });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   return (
@@ -111,7 +129,7 @@ export default function UpdateUser(props: any) {
             </div>
             <div className="form-group">
               <input type="submit" value="Update" className="btn btn-primary"/>
-              <input value="Delete" className="btn btn-danger"/>
+              <input value="Delete" className="btn btn-danger" onClick={deleteUser}/>
             </div>
           </form>
         </div>
