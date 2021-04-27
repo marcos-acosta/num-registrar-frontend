@@ -33,18 +33,20 @@ const NoUser = (props: any) => {
       <h2>{props.number}</h2>
       <span className={styles.softText}>
         {
-          context ? 
-            (context.number === -1 ? 
-              <Link to={addLink} className={styles.whiteLink}>Claim this number!</Link> : 
-              <span>Unclaimed</span>) 
-            : <span>Log in to claim this number!</span>
+          props.isLoading ? <div>Loading...</div> : (
+            context ? 
+              (context.number === -1 ? 
+                <Link to={addLink} className={styles.whiteLink}>Claim this number!</Link> : 
+                <span>Unclaimed</span>) 
+              : <span>Log in to claim this number!</span>
+          )
         }
       </span>
     </div>
   )
 };
 
-export default class UserList extends Component<{}, {users: any}> {
+export default class UserList extends Component<{}, {users: any, loading: boolean}> {
 
   constructor(props: any) {
     super(props);
@@ -52,14 +54,16 @@ export default class UserList extends Component<{}, {users: any}> {
     this.deleteUser = this.deleteUser.bind(this);
 
     this.state = {
-      users: []
+      users: [],
+      loading: true
     };
   }
 
   componentDidMount() {
     axios.get('https://num-reg.herokuapp.com/api/users/')
       .then(response => {
-        this.setState({users: response.data})
+        this.setState({users: response.data});
+        this.setState({loading: false});
       })
       .catch(err => {
         console.log(err);
@@ -82,7 +86,7 @@ export default class UserList extends Component<{}, {users: any}> {
         return user.number === i;
       });
       if (numberOwners === undefined || numberOwners.length === 0) {
-        res.push(<NoUser number={i} key={i}/>)
+        res.push(<NoUser number={i} key={i} isLoading={this.state.loading}/>)
       } else {
         let numberOwner = numberOwners[0];
         res.push(<User user={numberOwner} deleteUser={this.deleteUser} key={i}/>)
