@@ -16,6 +16,8 @@ export default function PrivacyPage() {
         To delete your Facebook ID from the database entirely, simply <b>UPDATE</b> your claimed number and click the <b>DELETE</b> button.
         <br/>
         Number Registrar will never share your Facebook information with anyone ever.
+        <br/><br/>
+        If you have any privacy concerns, contact Marcos Acosta at <a href="mailto:macosta1625@gmail.com">macosta1625@gmail.com</a>.
       </div>
     </>
   )
