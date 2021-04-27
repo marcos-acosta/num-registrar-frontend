@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         <Link to={"/"} className={globalStyles.blackLink}><u>Number Registrar</u></Link>'s Privacy and Data Deletion Policy
       </div>
       <div className={`${styles.detailText} mt-2`}>
-        The only information stored in Number Registrar's database when logging in with Facebook is your <b>Facebook ID</b> and <b>your name</b> (as a username placeholder).
+        The only information stored in Number Registrar's database when logging in with Facebook is your <b>Facebook ID</b>. Your <b>name</b> can be changed at any time.
         <br/>
         To delete your Facebook ID from the database entirely, simply <b>UPDATE</b> your claimed number and click the <b>DELETE</b> button.
         <br/>
